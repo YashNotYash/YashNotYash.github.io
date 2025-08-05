@@ -1,0 +1,116 @@
+.services-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.services-title {
+  font-size: 2rem;
+  color: #1d1d1f;
+  margin-bottom: 2rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 700px) {
+  .services-grid {
+    grid-template-columns: 1fr; /* Stack on small screens */
+  }
+}
+
+.service-tile {
+  position: relative;
+  height: 220px;
+  border-radius: 18px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+
+.service-tile:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(0,113,227,0.15);
+}
+
+.service-name {
+  background: rgba(245,245,247,0.82);
+  color: #1d1d1f;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0.7rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  letter-spacing: 1px;
+}
+
+.service-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(30,30,32,0.32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.service-modal {
+  background: rgba(245,245,247,0.97);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  padding: 2rem 2.5rem;
+  min-width: 320px;
+  max-width: 90vw;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.2s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95);}
+  to { opacity: 1; transform: scale(1);}
+}
+
+.service-modal h3 {
+  margin-top: 0;
+  color: #1d1d1f;
+  font-size: 2rem;
+}
+
+.service-modal ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0 0;
+}
+
+.service-modal li {
+  font-size: 1.15rem;
+  color: #515154;
+  margin-bottom: 0.7rem;
+}
+
+.service-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.service-modal-close:hover {
+  color: #0071e3;
+}
